@@ -15,7 +15,8 @@ namespace BookCaseSystem
 
                 //Velkomst besked:
                 //dialog.dialogUniMessage("Welcome \nIndtast brugerID: ");
-                dialog.Menu();
+                Menu menu = new Menu();
+                menu.Menuen();
                 // --------- Search
                 //opret ny Search objekt
                 Search search = new Search();
