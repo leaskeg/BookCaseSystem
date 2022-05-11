@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Tilføjet kommentar 16:34 af hjacob
 namespace BookCaseSystem
 {
     internal class Dialog
