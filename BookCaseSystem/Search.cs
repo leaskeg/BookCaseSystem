@@ -15,10 +15,11 @@ namespace BookCaseSystem
 
         //
         //Search constructor(CTOR), tager imod userID, men bruger det ikke. 
-        public Search(int userID)
+        public Search()
         {
             int FinalUserID = userID;
-
+            // Sætter userID = bruger input
+            userID = Int32.Parse(Console.ReadLine());
             bookCaseBarCode = BookCaseBarCodeGen();
         }
 

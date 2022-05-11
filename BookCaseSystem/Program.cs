@@ -18,7 +18,7 @@ namespace BookCaseSystem
 
                 // --------- Search
                 //opret ny Search objekt
-                Search search = new Search(Int32.Parse(Console.ReadLine()));
+                Search search = new Search();
 
                 //indsæt bruger ID i search
                 //search.userID = Int32.Parse(Console.ReadLine());
