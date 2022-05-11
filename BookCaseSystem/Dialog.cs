@@ -45,13 +45,13 @@ namespace BookCaseSystem
          ██████╔╝█████╗  ██║   ██║██║     ██╔████╔██║███████║██████╔╝█████╔╝ █████╗  ██║  ██║█████╗     ██║   
          ██╔══██╗██╔══╝  ██║   ██║██║     ██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██╔══╝  ██║  ██║██╔══╝     ██║   
          ██║  ██║███████╗╚██████╔╝███████╗██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗███████╗██████╔╝███████╗   ██║   
-         ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝   ╚═╝   
-");
+         ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝   ╚═╝ ");
+                // http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
                     Console.WriteLine();
                     Console.WriteLine("1. Tilføj ny reollejer");
                     Console.WriteLine("2. Vis alle reollejere");
                     Console.WriteLine("0. Afslut programmet");
-                    Console.Write("Angiv dit valg: ");
+                    Console.Write("\nAngiv dit valg: ");
                     option = Console.ReadLine();
 
                     switch (option)
