@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//Tilføjet kommentar 16:34 af hjacob
 namespace BookCaseSystem
 {
     internal class Dialog
     {
+        //velkommen besked
         public void Welcome()
         {
 
         }
-        public void UserID(string message)
+
+        //universal besked generator
+        public void dialogUniMessage(string message)
         {
             Console.WriteLine(message);
         }
