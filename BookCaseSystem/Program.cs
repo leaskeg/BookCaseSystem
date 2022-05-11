@@ -9,6 +9,11 @@ namespace BookCaseSystem
             //Loop 1.0.0
             while (true)
             {
+                XML xmlInterface = new XML();
+                //SLET inden merge
+
+                //SLET INDEN MERGE
+
                 // --------- DIALOG
                 //opret en ny Dialog objekt
                 Dialog dialog = new Dialog();
