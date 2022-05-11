@@ -14,7 +14,7 @@ namespace BookCaseSystem
                 Dialog dialog = new Dialog();
 
                 //Velkomst besked:
-                dialog.dialogMessage("Welcome \nIndtast brugerID: ");
+                dialog.dialogUniMessage("Welcome \nIndtast brugerID: ");
 
                 // --------- Search
                 //opret ny Search objekt
@@ -29,7 +29,7 @@ namespace BookCaseSystem
 
                 // --------- DIALOG
                 //afsluttende besked, rens skærm efter tryk
-                dialog.dialogMessage("Programmet er slut tryk for at prøv igen ");
+                dialog.dialogUniMessage("Programmet er slut tryk for at prøv igen ");
                 Console.ReadLine();
                 Console.Clear();
             }
