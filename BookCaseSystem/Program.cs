@@ -17,6 +17,7 @@ namespace BookCaseSystem
                 //dialog.dialogUniMessage("Welcome \nIndtast brugerID: ");
                 Menu menu = new Menu();
                 menu.Menuen();
+
                 // --------- Search
                 //opret ny Search objekt
                 Search search = new Search();
