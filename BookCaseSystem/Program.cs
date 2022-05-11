@@ -8,16 +8,26 @@ namespace BookCaseSystem
         {
             while (true)
             {
+                //opret en ny Dialog objekt
                 Dialog dialog = new Dialog();
-                dialog.UserID("Welcome \nIndtast brugerID: ");
-               
 
+                //Velkomst besked:
+                dialog.UserID("Welcome \nIndtast brugerID: ");
+                
+                //opret ny Search objekt
                 Search search = new Search(50520);
+
+                //indsæt bruger ID i search
                 search.userID = Int32.Parse(Console.ReadLine());
-                Console.WriteLine(search.userID);
-               
-                Console.WriteLine(search.bookCaseBarCode);
+
+                //vis userID
+                Console.WriteLine("userID: " + search.userID);
+                Console.WriteLine("randomBarcode: " + search.bookCaseBarCode);
+
+                //afsluttende besked
+                dialog.UserID("Programmet er slut tryk for at prøv igen ");
                 Console.ReadLine();
+                Console.Clear();
             }
         }
     }
