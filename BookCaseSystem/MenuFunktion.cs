@@ -33,10 +33,13 @@ namespace BookCaseSystem
 
             do
             {
-
+                Console.WriteLine();
+                //Referer til Dialog og laver et nyt objekt
+                Dialog dialog = new Dialog();
+                //Kalder dens Welcome metode
+                dialog.Welcome();
                 //Sætter vores option så vi modtager bruger input
                 option = Console.ReadLine();
-
                 //Switch case som kontrollere hvad brugere trykker på og sikre at hvis brugeren trykker forkert så får de en fejl besked. 
                 switch (option)
                 {
@@ -61,7 +64,10 @@ namespace BookCaseSystem
                             reollejer[amount].Phone = Console.ReadLine();
 
                             amount++; //Vi husker at vores tæller nu skal gå op med 1 fordi vi har lavet en ny reollejer.
-                            Console.WriteLine();
+
+                            Console.WriteLine("\nReollejer tilføjet!");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
                         else //Hvis der er mere end de 200 reoler udlejet, så får brugeren denne besked.
                         {
@@ -84,6 +90,8 @@ namespace BookCaseSystem
                         {
                             for (int i = 0; i < amount; i++)
                                 Console.WriteLine($"Navn = {reollejer[i].FirstName} {reollejer[i].LastName},  E-Mail = {reollejer[i].Email}, Telefon Nummer = {reollejer[i].Phone}", i + 1);
+                            Console.ReadLine();
+                            Console.Clear();
                             Console.WriteLine();
                         }
                         break;
@@ -99,8 +107,7 @@ namespace BookCaseSystem
                         Console.Clear();
                         break;
                 }
-            }
-            while (repeating);
+            } while (repeating);
         }
     }
 }
