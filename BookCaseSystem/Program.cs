@@ -5,10 +5,6 @@ namespace BookCaseSystem
     internal class Program
     {
 
-        public static void bookCaseNewOwner()
-        {
-
-        }
 
         static void Main(string[] args)
         {
