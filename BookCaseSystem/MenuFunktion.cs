@@ -36,6 +36,7 @@ namespace BookCaseSystem
 
                 //Sætter vores option så vi modtager bruger input
                 option = Console.ReadLine();
+
                 //Switch case som kontrollere hvad brugere trykker på og sikre at hvis brugeren trykker forkert så får de en fejl besked. 
                 switch (option)
                 {

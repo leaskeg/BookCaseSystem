@@ -29,6 +29,7 @@ namespace BookCaseSystem
              string option;
              //Vores counter som holder øje med hvor mange reollejer vi har
              int amount = 0;
+       
             do
             {
                 Console.WriteLine();
