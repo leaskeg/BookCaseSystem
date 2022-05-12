@@ -40,26 +40,28 @@ namespace BookCaseSystem
                 dialog.Welcome();
                 //Sætter vores option så vi modtager bruger input
                 option = Console.ReadLine();
+                Console.Clear();
                 //Switch case som kontrollere hvad brugere trykker på og sikre at hvis brugeren trykker forkert så får de en fejl besked. 
                 switch (option)
                 {
                     case "1": // tilføj ny reollejer
                         if (amount < reoler)
                         {
-                            Console.WriteLine("Bruger har fået brugerID'et: {0}", amount + 1);
-                            Console.Write("Skriv fornavnet på den nye reollejer: ");
+                            Console.WriteLine("Antal reollejer i systemet = {0}\n", amount + 1);
+                            
+                            Console.Write("Indtast fornavn: ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].FirstName = Console.ReadLine();
 
-                            Console.Write("\nSkriv efternavnet på den nye reollejer: ");
+                            Console.Write("\nIndtast efternavn:  ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].LastName = Console.ReadLine();
 
-                            Console.Write("\nSkriv den nye reollejers e-mail:  ");
+                            Console.Write("\nIndtast e-mail:  ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].Email = Console.ReadLine();
 
-                            Console.Write("\nSkriv den nye reollejers telefon nummer ");
+                            Console.Write("\nIndtast telefonnummer:  ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].Phone = Console.ReadLine();
 
@@ -89,10 +91,10 @@ namespace BookCaseSystem
                              //Med andre ord, vi iterere igennem vores array og displayer alt i arrayet.
                         {
                             for (int i = 0; i < amount; i++)
-                                Console.WriteLine($"Navn = {reollejer[i].FirstName} {reollejer[i].LastName},  E-Mail = {reollejer[i].Email}, Telefon Nummer = {reollejer[i].Phone}", i + 1);
+                                Console.WriteLine($"Navn = {reollejer[i].FirstName} {reollejer[i].LastName}\nE-Mail = {reollejer[i].Email}\nTelefon Nummer = {reollejer[i].Phone}\n", i + 1);
+                            Console.WriteLine("\nTryk på en vilkårlig tast for at vende tilbage til menuen: ");
                             Console.ReadLine();
                             Console.Clear();
-                            Console.WriteLine();
                         }
                         break;
                     case "0": //Afslut programmet

@@ -11,7 +11,7 @@ namespace BookCaseSystem
         public double bookCaseBarCode { get; set; }
         public int userID { get; set; }
 
-        public Search()
+        public void SearchID()
         {
             try
             {
