@@ -6,9 +6,8 @@ namespace BookCaseSystem
     {
         static void Main(string[] args)
         {
-            //Loop 1.0.0
-            while (true)
-            {
+
+
                 // --------- DIALOG
                 //opret en ny Dialog objekt
                 Dialog dialog = new Dialog();
@@ -17,6 +16,19 @@ namespace BookCaseSystem
                 //dialog.dialogUniMessage("Welcome \nIndtast brugerID: ");
                 MenuFunktion menu = new MenuFunktion();
                 menu.Menuen();
+
+                // --------- DIALOG
+                //afsluttende besked, rens skærm efter tryk
+                dialog.dialogUniMessage("Programmet er slut tryk for at prøv igen ");
+                Console.ReadLine();
+                Console.Clear();
+            
+        }
+    }
+}
+
+
+/*
 
                 // --------- Search
                 //opret ny Search objekt
@@ -28,13 +40,7 @@ namespace BookCaseSystem
                 //vis userID og bookCaseBarCode fra Search class
                 Console.WriteLine("userID: " + search.userID);
                 Console.WriteLine("randomBarcode: " + search.bookCaseBarCode);
-
-                // --------- DIALOG
-                //afsluttende besked, rens skærm efter tryk
-                dialog.dialogUniMessage("Programmet er slut tryk for at prøv igen ");
-                Console.ReadLine();
-                Console.Clear();
-            }
-        }
-    }
-}
+ 
+ 
+ 
+ */
