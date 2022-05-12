@@ -10,6 +10,7 @@ namespace BookCaseSystem
     {
         //Ikke færdig implementeret endnu
         //opretter en struct som indeholder vores skabalon for vores reollejer
+        //flyttes over til Reollejer klassen
         public struct ReolLejer
         {
             public string FirstName;

@@ -12,10 +12,15 @@ namespace BookCaseSystem
                 //opret en ny Dialog objekt
                 Dialog dialog = new Dialog();
 
-                //Velkomst besked:
                 //dialog.dialogUniMessage("Welcome \nIndtast brugerID: ");
                 MenuFunktion menu = new MenuFunktion();
                 menu.Menuen();
+
+
+                
+                
+
+                
 
                 // --------- DIALOG
                 //afsluttende besked, rens skærm efter tryk
@@ -27,6 +32,8 @@ namespace BookCaseSystem
     }
 }
 
+
+// ældre funktioner: 
 
 /*
 
