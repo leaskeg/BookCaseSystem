@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookCaseSystem
 {
-    internal class MenuFunktion
+    public class MenuFunktion
     {
         //Ikke færdig implementeret endnu
         //opretter en struct som indeholder vores skabalon for vores reollejer
@@ -39,6 +39,8 @@ namespace BookCaseSystem
                 Dialog dialog = new Dialog();
                 //Kalder dens Welcome metode
                 dialog.Welcome();
+                //Menu menu = new Menu("Test");
+                //menu.
                 //Sætter vores option så vi modtager bruger input
                 option = Console.ReadLine();
                 Console.Clear();
