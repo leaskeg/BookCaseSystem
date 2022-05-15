@@ -17,6 +17,7 @@ namespace BookCaseSystem
             public string Email;
             public string LastName;
             public string Phone;
+            public int ID;
         }
 
         public void Menuen()
@@ -27,8 +28,7 @@ namespace BookCaseSystem
             ReolLejer[] reollejer = new ReolLejer[reoler];
             //Opretter en boolean som vi senere bruger til vores do-while loop
             bool repeating = true;
-            //Vores string i do-while som senere i koden bliver sat = Console.ReadLine(); og indtager input fra brugeren
-            string option;
+
             //Vores counter som holder øje med hvor mange reollejer vi har
             int amount = 0;
 
@@ -42,51 +42,57 @@ namespace BookCaseSystem
                 //Menu menu = new Menu("Test");
                 //menu.
                 //Sætter vores option så vi modtager bruger input
-                option = Console.ReadLine();
+                Menu m = new Menu();
+                m.ItemCount = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 //Switch case som kontrollere hvad brugere trykker på og sikre at hvis brugeren trykker forkert så får de en fejl besked. 
-                switch (option)
+                switch (m.ItemCount)
                 {
-                    case "1": // tilføj ny reollejer
+                    case 1: // tilføj ny reollejer
                         if (amount < reoler)
                         {
                             Console.WriteLine("Antal reollejer i systemet = {0}\n", amount + 1);
-                            
-                            Console.Write("Indtast fornavn: ");
+
+                            dialog.dialogUniMessage("Indtast fornavn: ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].FirstName = Console.ReadLine();
+                            dialog.dialogUniMessage("\nIndtast efternavn: ");
 
-                            Console.Write("\nIndtast efternavn:  ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].LastName = Console.ReadLine();
+                            dialog.dialogUniMessage("\nIndtast e-mail: ");
 
-                            Console.Write("\nIndtast e-mail:  ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].Email = Console.ReadLine();
-
-                            Console.Write("\nIndtast telefonnummer:  ");
+                            dialog.dialogUniMessage("\nIndtast telefonnummer: ");
                             //Sætter vores oprettet array = brugerens input
                             reollejer[amount].Phone = Console.ReadLine();
 
+                            //generer et random ID til den tilføjet reollejer
+                            Random random = new Random();
+                            reollejer[amount].ID = random.Next(1, 99999);
+                            Console.Write($"\nReollejerens auto-genereret ID er: {reollejer[amount].ID}");
+                            Console.ReadLine();
+
                             amount++; //Vi husker at vores tæller nu skal gå op med 1 fordi vi har lavet en ny reollejer.
 
-                            Console.WriteLine("\nReollejer tilføjet!");
+                            dialog.dialogUniMessage("\nReollejer tilføjet!");
                             Console.ReadLine();
                             Console.Clear();
                         }
                         else //Hvis der er mere end de 200 reoler udlejet, så får brugeren denne besked.
                         {
-                            Console.WriteLine("Ingen ledige reoler");
+                            dialog.dialogUniMessage("Ingen ledige reoler");
                             Console.ReadLine();
                             Console.Clear();
                         }
                         break;
 
                     // vis alle reollejer
-                    case "2":
+                    case 2:
                         if (amount == 0) //Sikre at hvis der ingen reollejere er oprettet, så ser brugeren denne besked
                         {
-                            Console.WriteLine("\nDer findes ingen reollejere");
+                            dialog.dialogUniMessage("Der findes ingen reollejere");
                             Console.ReadLine();
                             Console.Clear();
                         }
@@ -94,20 +100,20 @@ namespace BookCaseSystem
                              //Med andre ord, vi iterere igennem vores array og displayer alt i arrayet.
                         {
                             for (int i = 0; i < amount; i++)
-                                Console.WriteLine($"Navn = {reollejer[i].FirstName} {reollejer[i].LastName}\nE-Mail = {reollejer[i].Email}\nTelefon Nummer = {reollejer[i].Phone}\n", i + 1);
-                            Console.WriteLine("\nTryk på en vilkårlig tast for at vende tilbage til menuen: ");
+                            
+                            Console.WriteLine($"Navn = {reollejer[i].FirstName} {reollejer[i].LastName}\nE-Mail = {reollejer[i].Email}\nTelefon Nummer = {reollejer[i].Phone}\nID: {reollejer[i].ID}\n", i + 1);
+                            dialog.dialogUniMessage("\nTryk på en vilkårlig tast for at vende tilbage til menuen: ");
                             Console.ReadLine();
                             Console.Clear();
                         }
                         break;
-                    case "0": //Afslut programmet
-                        Console.WriteLine("Programmet lukker ned. Tak for denne gang!");
+                    case 0: //Afslut programmet
+                        dialog.dialogUniMessage("Programmet lukker ned. Tak for denne gang!");
                         Console.ReadLine();
                         Environment.Exit(0);
                         break;
                     default: //Default hvis brugeren trykker på noget forkert ser de denne besked (bruger venlighed)
-                        Console.WriteLine();
-                        Console.WriteLine("Forkert valg. Prøv venligst igen\n");
+                        dialog.dialogUniMessage("Forkert valg. Prøv venligst igen\n");
                         Console.ReadLine();
                         Console.Clear();
                         break;

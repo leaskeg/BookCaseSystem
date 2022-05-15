@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace BookCaseSystem
 {
+
     public class Menu
     {
         public string Title { get; set; }
         public int ItemCount = 0;
         public MenuItem[] MenuItems = new MenuItem[10];
 
-        public Menu(string titleMenu)
+        /*public Menu(string titleMenu) //bliver ikke brugt fordi det skabte problemer med vores menu kunne ikke kalde itemcount
         {
             Title = titleMenu;
         }
-
+        */
         public void Show()
         {
+
             while (true)
             {
                 Console.WriteLine(Title + "\n");
@@ -28,12 +30,8 @@ namespace BookCaseSystem
                     Console.WriteLine("  " + MenuItems[i].Title);
 
                 }
-                Console.WriteLine("\n(Tryk menupunkt eller 0 for at afslutte)");
+                Console.WriteLine("\n(Tryk på et menupunkt eller 0 for at afslutte)");
 
-                ItemCount = SelectMenuItem(Convert.ToInt32(Console.ReadLine()));
-
-                //ItemCount = SelectMenuItem(1);
-                Console.Clear();
                 break;
             }
 
@@ -44,7 +42,7 @@ namespace BookCaseSystem
             MenuItems[num] = mi;
             ItemCount++;
         }
-        public int SelectMenuItem(int itemNum)
+        public int SelectMenuItem(int itemNum) //Bliver ikke brugt lige pt?
         {
 
             if (itemNum <= 0)
