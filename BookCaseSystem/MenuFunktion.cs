@@ -108,17 +108,24 @@ namespace BookCaseSystem
                         }
                         break;
                     case 0: //Afslut programmet
-                        dialog.dialogUniMessage("Programmet lukker ned. Tak for denne gang!");
-                        Console.ReadLine();
-                        Environment.Exit(0);
+                        program_001_Exit();
                         break;
                     default: //Default hvis brugeren trykker på noget forkert ser de denne besked (bruger venlighed)
+                         
                         dialog.dialogUniMessage("Forkert valg. Prøv venligst igen\n");
                         Console.ReadLine();
                         Console.Clear();
                         break;
                 }
             } while (repeating);
+        }
+
+        public static void program_001_Exit()
+        {
+            Dialog dialog = new Dialog();
+            dialog.dialogUniMessage("Programmet lukker ned. Tak for denne gang!");
+            Console.ReadLine();
+            Environment.Exit(0);
         }
     }
 }
