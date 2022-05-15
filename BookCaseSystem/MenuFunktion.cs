@@ -111,15 +111,29 @@ namespace BookCaseSystem
                         program_001_Exit();
                         break;
                     default: //Default hvis brugeren trykker på noget forkert ser de denne besked (bruger venlighed)
-                         
-                        dialog.dialogUniMessage("Forkert valg. Prøv venligst igen\n");
-                        Console.ReadLine();
-                        Console.Clear();
+                        program_002_Default();
                         break;
                 }
             } while (repeating);
         }
 
+        public static void program_004_test()
+        {
+
+        }
+
+        public static void program_003_test()
+        {
+
+        }
+
+        public static void program_002_Default()
+        {
+            Dialog dialog = new Dialog();
+            dialog.dialogUniMessage("Forkert valg. Prøv venligst igen\n");
+            Console.ReadLine();
+            Console.Clear();
+        }
         public static void program_001_Exit()
         {
             Dialog dialog = new Dialog();
