@@ -62,6 +62,7 @@ namespace BookCaseSystem
                 switch (m.ItemCount)
                 {
                     case 1: // tilføj ny reollejer
+                        //Controller.AddNewBookCaseOwner()
                         if (amount < reoler)
                         {
                             Console.WriteLine("Antal reollejer i systemet = {0}\n", amount + 1);
@@ -103,6 +104,7 @@ namespace BookCaseSystem
 
                     // vis alle reollejer
                     case 2:
+                        //Controller.ShowAllBookCaseOwner()
                         if (amount == 0) //Sikre at hvis der ingen reollejere er oprettet, så ser brugeren denne besked
                         {
                             dialog.dialogUniMessage("Der findes ingen reollejere");
