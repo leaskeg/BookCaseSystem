@@ -11,6 +11,10 @@ namespace BookCaseSystem
         //Ikke færdig implementeret endnu
         //opretter en struct som indeholder vores skabalon for vores reollejer
         //flyttes over til Reollejer klassen
+        int amount { get; set; } = 0;
+        int reoler { get; set; } = 200;
+
+
         public struct ReolLejer
         {
             public string FirstName;
@@ -23,14 +27,14 @@ namespace BookCaseSystem
         public void Menuen()
         {
             //definere hvor mange reoler vi har til leje
-            int reoler = 200;
+            //int reoler = 200;
             //Opretter ny reollejer array
             ReolLejer[] reollejer = new ReolLejer[reoler];
             //Opretter en boolean som vi senere bruger til vores do-while loop
             bool repeating = true;
-
+            
             //Vores counter som holder øje med hvor mange reollejer vi har
-            int amount = 0;
+            //int amount = 0;
 
             do
             {
@@ -43,7 +47,16 @@ namespace BookCaseSystem
                 //menu.
                 //Sætter vores option så vi modtager bruger input
                 Menu m = new Menu();
-                m.ItemCount = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    m.ItemCount = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Fejl: Forkert Input ");
+                    Console.ReadLine();
+                    
+                }
                 Console.Clear();
                 //Switch case som kontrollere hvad brugere trykker på og sikre at hvis brugeren trykker forkert så får de en fejl besked. 
                 switch (m.ItemCount)
@@ -105,6 +118,35 @@ namespace BookCaseSystem
                             dialog.dialogUniMessage("\nTryk på en vilkårlig tast for at vende tilbage til menuen: ");
                             Console.ReadLine();
                             Console.Clear();
+                        }
+                        break;
+                    case 3:
+                        {
+                            dialog.dialogUniMessage("Skriv ID'et på den person du leder efter: ");
+                            try
+                            {
+                                int userinput = Convert.ToInt32(Console.ReadLine());
+
+                                for (int i = 0; i < amount; i++)
+                                    if (reollejer[i].ID == userinput)
+                                    {
+                                        Console.WriteLine($"\nNavn = {reollejer[i].FirstName} {reollejer[i].LastName}\nE-Mail = {reollejer[i].Email}\nTelefon Nummer = {reollejer[i].Phone}\nID: {reollejer[i].ID}\n", i + 1);
+                                        Console.ReadLine();
+                                        Console.Clear();
+                                    }
+                                    else if (reollejer[i].ID != userinput)
+                                    {
+                                        Console.WriteLine("Der findes ingen reollejer med det ID, prøv igen");
+                                        Console.ReadLine();
+                                        Console.Clear();
+                                    }
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Forkert Input");
+                                Console.ReadLine();
+                                Console.Clear();
+                            }
                         }
                         break;
                     case 0: //Afslut programmet

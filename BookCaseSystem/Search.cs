@@ -13,6 +13,9 @@ namespace BookCaseSystem
 
         public void SearchID()
         {
+            MenuFunktion menuFunktion = new MenuFunktion();
+            menuFunktion.Menuen();
+            
             try
             {
                 userID = Int32.Parse(Console.ReadLine());
@@ -32,6 +35,7 @@ namespace BookCaseSystem
 
             return bookCaseBarCodeID;
         }
+
 
     }
 }
